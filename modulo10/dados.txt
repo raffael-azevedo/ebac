@@ -1,0 +1,12 @@
+Dados do aluno
+
+-Primeiro Nome: Raffael
+-Profissão: QA
+-Cidade: Novo Hamburgo
+-O que faz nas horas vaga: Brinco com minha filha, toco guitarra e jogo meu Switch
+-Feedback sobre o curso Qualidade de Software: Um pouco aquém do que eu esperava pra ser sincero. Pelo valor investido, até agora esperava mais. Muitos conteúdos foram rasos, não existe um cuidado muito grande com o preparo do material (mas acredito que isso é da equipe da EBAC, ao transcrever o material que o instrutor perpara), pois em todos os módulos existe pelo menos uma inconsistência (e.g., material faltando, erros de digitação, erros na diagramação por interpretação do material, etc.). Já ouvi de alunos em módulos mais avançados (como o 16 e 17) que as instruções não são nada claras. Teste mobile é algo muito sério e complexo. Acredito que deveria ser dado uma atenção maior à isso, visto que 3 horas (mais ou menos) não são suficientes para cobrir todos os detalhes importantes necessários à CONFIGURAÇÃO DO AMBIENTE. Sem falar em escrita de testes, etc. O curso utiliza JavaScript, mas não tem uma seção exclusiva a ensinar o básico. Espero que meu feedback mude daqui pro fim do curso.  
+-Feedback sobre a plataforma de estudo da EBAC: Em constante atualização. Acho que desde que comecei o curso já passamos por duas, o que mostra o comprometimento do time em adequar a plataforma e mantê-la sempre atualizada. 
+
+Obrigado!!!
+
+
