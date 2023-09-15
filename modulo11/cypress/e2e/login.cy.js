@@ -1,8 +1,9 @@
 import { faker } from '@faker-js/faker';
+import perfil from '../fixtures/perfil.json'
 
-const baseUrl = 'http://lojaebac.ebaconline.art.br/minha-conta/';
-const validUsername = 'aluno_ebac@teste.com'
-const validPassword = 'teste@teste.com'
+const baseUrl = 'minha-conta/';
+const validUsername = perfil.username
+const validPassword = perfil.password
 
 let invalidUsername = faker.internet.email()
 let invalidPassword = faker.internet.password()
@@ -20,9 +21,18 @@ describe('login tests', () => {
 
     it('should login successfully', () => {
         cy.get(loginTextField).type(validUsername)
-        cy.get(passwordTextField).type(validUsername)
+        cy.get(passwordTextField).type(validPassword)
         cy.get(loginButton).click()
         cy.get('.page-title').should('contain', 'Minha conta')
+    })
+
+    it.only('should login using fixtures', () => {
+        cy.fixture('perfil').then(dados => {
+            cy.get(loginTextField).type(dados.username)
+            cy.get(passwordTextField).type(dados.password)
+            cy.get(loginButton).click()
+            cy.get('.page-title').should('contain', 'Minha conta')
+        })
     })
 
     it('should show an error message when invalid username', () => {
