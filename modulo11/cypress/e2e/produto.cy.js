@@ -1,4 +1,4 @@
-const baseUrl = 'http://lojaebac.ebaconline.art.br/produtos/';
+const baseUrl = 'produtos/';
 const validUsername = 'aluno_ebac@teste.com'
 const validPassword = 'teste@teste.com'
 const productImage = '[class="product-block grid"]'
@@ -25,6 +25,11 @@ describe('products', () => {
     cy.get(greenColorButton).click()
     cy.get(addToCartButton).click()
 
+    cy.get(addedToCartAlert).should('exist')
+  })
+
+  it.only('should add a product to the cart using custom commands', () => {
+    cy.addProduct(productImage, 'M', 'Blue')
     cy.get(addedToCartAlert).should('exist')
   })
 })

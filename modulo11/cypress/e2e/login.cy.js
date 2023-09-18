@@ -19,14 +19,14 @@ describe('login tests', () => {
         cy.visit(baseUrl)
     })
 
-    it('should login successfully', () => {
+    it.only('should login successfully', () => {
         cy.get(loginTextField).type(validUsername)
         cy.get(passwordTextField).type(validPassword)
         cy.get(loginButton).click()
         cy.get('.page-title').should('contain', 'Minha conta')
     })
 
-    it.only('should login using fixtures', () => {
+    it('should login using fixtures', () => {
         cy.fixture('perfil').then(dados => {
             cy.get(loginTextField).type(dados.username)
             cy.get(passwordTextField).type(dados.password)

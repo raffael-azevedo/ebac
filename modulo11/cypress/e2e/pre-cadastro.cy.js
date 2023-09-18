@@ -28,7 +28,7 @@ let lastName = faker.person.lastName()
 
 describe('pre-register', () => {
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta/')
     })
 
     it('should register with a valid user', () => {
@@ -65,6 +65,11 @@ describe('pre-register', () => {
         cy.get(displayNameTextField).type(displayName)
         cy.get(saveChangesButton).click()
 
+        cy.get(successAlert).should('exist')
+    })
+
+    it.only('should finish the registering with fixtures and custom commands', () => {
+        cy.preRegister(username(), password(), firstName, lastName, displayName)
         cy.get(successAlert).should('exist')
     })
 })
