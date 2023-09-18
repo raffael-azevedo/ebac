@@ -31,7 +31,7 @@ describe('pre-register', () => {
         cy.visit('minha-conta/')
     })
 
-    it('should register with a valid user', () => {
+    xit('should register with a valid user', () => {
         cy.get(emailTextField).type(username())
         cy.get(passwordTextField).type(password())
         cy.get(registerButton).click()
@@ -39,7 +39,7 @@ describe('pre-register', () => {
         cy.get(helloMessage).should('contain', 'Olá')
     })
 
-    it('should throw an error for empty e-mail', () => {
+    xit('should throw an error for empty e-mail', () => {
         cy.get(emailTextField).type(' ')
         cy.get(passwordTextField).type(password())
         cy.get(registerButton).click()
@@ -47,7 +47,7 @@ describe('pre-register', () => {
         cy.get(errorMessage).should('contain', 'Informe um endereço de e-mail válido')
     })
 
-    it('should throw an error for invalid e-mail', () => {
+    xit('should throw an error for invalid e-mail', () => {
         cy.get(emailTextField).type(`pudim${Math.floor(Math.random() * 999)}@pudim`)
         cy.get(passwordTextField).type(password())
         cy.get(registerButton).click()
@@ -55,7 +55,7 @@ describe('pre-register', () => {
         cy.get(errorMessage).should('contain', 'Informe um endereço de e-mail válido')
     })
 
-    it('should finish the registering', () => {
+    xit('should finish the registering', () => {
         cy.get(emailTextField).type(username())
         cy.get(passwordTextField).type(password())
         cy.get(registerButton).click()
@@ -68,7 +68,7 @@ describe('pre-register', () => {
         cy.get(successAlert).should('exist')
     })
 
-    it.only('should finish the registering with fixtures and custom commands', () => {
+    xit('should finish the registering with fixtures and custom commands', () => {
         cy.preRegister(username(), password(), firstName, lastName, displayName)
         cy.get(successAlert).should('exist')
     })

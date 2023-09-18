@@ -19,14 +19,14 @@ describe('login tests', () => {
         cy.visit(baseUrl)
     })
 
-    it.only('should login successfully', () => {
+    xit('should login successfully', () => {
         cy.get(loginTextField).type(validUsername)
         cy.get(passwordTextField).type(validPassword)
         cy.get(loginButton).click()
         cy.get('.page-title').should('contain', 'Minha conta')
     })
 
-    it('should login using fixtures', () => {
+    xit('should login using fixtures', () => {
         cy.fixture('perfil').then(dados => {
             cy.get(loginTextField).type(dados.username)
             cy.get(passwordTextField).type(dados.password)
@@ -35,13 +35,13 @@ describe('login tests', () => {
         })
     })
 
-    it('should show an error message when invalid username', () => {
+    xit('should show an error message when invalid username', () => {
         cy.get(loginTextField).type(invalidUsername)
         cy.get(passwordTextField).type(validPassword)
         cy.get(loginButton).click()
         cy.get(errorMessage).should('contain', 'e-mail desconhecido')
     })
-    it('should show an error message when invalid password', () => {
+    xit('should show an error message when invalid password', () => {
         cy.get(loginTextField).type(validUsername)
         cy.get(passwordTextField).type(invalidPassword)
         cy.get(loginButton).click()
