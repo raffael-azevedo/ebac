@@ -47,3 +47,18 @@ Cypress.Commands.add('addProduct', (produto, size, color) => {
     cy.get(`.button-variable-item-${color}`).click()
     cy.get('.single_add_to_cart_button').click()
 })
+
+Cypress.Commands.add('addProductToCart', (size) => {
+    cy.get(`.button-variable-item-${size}`).click()
+    cy.get('.button-variable-item-Blue').click()
+    cy.get('.single_add_to_cart_button').click()
+})
+
+Cypress.Commands.add('proceedCheckout', () => {
+    cy.get('.checkout-button').click()
+})
+
+Cypress.Commands.add('placeOrder', () => {
+    cy.get('#terms').click()
+    cy.get('#place_order').click()
+})
