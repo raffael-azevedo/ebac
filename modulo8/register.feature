@@ -9,39 +9,18 @@ Feature: Register
         And I'm not previously registered
 
         Scenario: Valid register
-            When I type my Firstname "Sherlock"
-            And my Surname "Holmes"
-            And my Country "United Kingdom"
-            And my Address "Baker St. 221b"
-            And my City "London"
-            And my Zip code "NW1 6XE"
-            And my Phone number "+44 7700 900253"
-            And my Email "sherlock@holmes.co.uk"
+            When I type my Firstname "Sherlock", my Surname "Holmes", my Country "United Kingdom", 
+            my Address "Baker St. 221b", my City "London", my Zip code "NW1 6XE", my Phone number "+44 7700 900253", and
+            my Email "sherlock@holmes.co.uk"
             Then I should be able to finish my purchases
 
         Scenario: Missing mandatory info
-            When I type my Firstname "Sherlock"
-            And my Surname "Holmes"
-            And my Country ""
-            And my Address "Baker St. 221b"
-            And my City "London"
-            And my Zip code ""
-            And my Phone number "+44 7700 900253"
-            And my Email ""
-            Then I shouldn't be able to register
+            When I forgot to input mandatory data
             And I should see an alert message "Missing mandatory data"
 
         Scenario Outline: Invalid e-mail
-            When I type my Firstname "Sherlock"
-            And my Surname "Holmes"
-            And my Country "United Kingdom"
-            And my Address "Baker St. 221b"
-            And my City "London"
-            And my Zip code "NW1 6XE"
-            And my Phone number "+44 7700 900253"
-            And my Email <email>
-            Then I shouldn't be able to register
-            And I should see an alert message "Invalid e-mail address"
+            When I fill in all the data, but an invalid e-mail <email>
+            Then I shouldn't be able to register, and see an alert message "Invalid e-mail address"
 
             Examples:
                 | email     |
