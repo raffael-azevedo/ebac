@@ -14,12 +14,12 @@ describe('products', () => {
   beforeEach(() => {
     cy.visit(baseUrl)
   })
-  xit('should select a product from the list', () => {
+  it('should select a product from the list', () => {
     cy.get(productImage).first().click()
     cy.get('.woocommerce-product-details__short-description > p').should('contain', 'This is a variable product called a Abominable Hoodie')
   })
 
-  xit('should add a product to the cart', () => {
+  it('should add a product to the cart', () => {
     cy.get(productImage).first().click()
     cy.get(smallSizeButton).click()
     cy.get(greenColorButton).click()
@@ -28,7 +28,7 @@ describe('products', () => {
     cy.get(addedToCartAlert).should('exist')
   })
 
-  xit.only('should add a product to the cart using custom commands', () => {
+  it('should add a product to the cart using custom commands', () => {
     cy.addProduct(productImage, 'M', 'Blue')
     cy.get(addedToCartAlert).should('exist')
   })

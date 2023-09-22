@@ -9,7 +9,7 @@ describe('address', () => {
         })
         
     })
-    xit('should register billing', () => {
+    it('should register billing', () => {
         enderecoPage.editarEnderecoFaturamento(
             dadosUsuario[1].firstName,
             dadosUsuario[1].lastName,
