@@ -6,9 +6,19 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Change directory') { 
             steps {
-                sh 'npm install' 
+                sh 'cd modulo11/' 
+            }
+        }
+        stage('Install packages') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Run cypress') {
+            steps {
+                sh 'NO_COLOR=1 npx cypress run --headless --browser electron'
             }
         }
     }
