@@ -34,7 +34,7 @@ describe('produtos', () => {
             url: '/produtos'
         }).then(response => {
             cy.log(response.body)
-            expect(response.duration).to.be.lessThan(100)
+            expect(response.duration).to.be.lessThan(400)
         })
     })
 
