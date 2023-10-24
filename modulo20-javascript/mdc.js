@@ -8,5 +8,7 @@ const mdc = function(num1, num2) {
     return num1    
 }
 
+export default mdc
+
 console.log(mdc(20, 24)) // 4
 console.log(mdc(18, 60)) // 6
