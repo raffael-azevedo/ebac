@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/register": "^7.22.15",
+    "@faker-js/faker": "^8.4.1",
+    "cypress": "^13.7.0"
+  }
+}
